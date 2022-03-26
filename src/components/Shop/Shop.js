@@ -117,7 +117,7 @@ const Shop = () => {
             </div>
             <div className="cart-container">
                 <Cart cart={cart}
-                 key={cart}
+                 key={products.id}
                  chooseAgain={chooseAgain}
                  chooseOneForMeHandler={chooseOneForMeHandler}></Cart>
             </div>

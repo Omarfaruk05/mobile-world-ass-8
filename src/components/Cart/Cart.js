@@ -7,7 +7,6 @@ const Cart = (props) => {
     const products = props.cart;
     const chooseAgain = props.chooseAgain;
     const chooseOneForMeHandler = props.chooseOneForMeHandler;
-
         return (
         <div className='cart'>
             <h2>Selected Phones</h2>
