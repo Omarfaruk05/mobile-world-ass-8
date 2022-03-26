@@ -1,0 +1,18 @@
+.product {
+  border: 2px solid lightgray;
+  margin: 10px;
+  text-align: center;
+  border-radius: 8px;
+}
+.cart-btn button {
+  font-weight: bold;
+  width: 100%;
+  border: none;
+  border-radius: 0 0 7px 7px;
+  padding: 15px;
+  background-color: rgba(39, 131, 120, 0.772);
+  transition: 0.3s;
+}
+.cart-btn button:hover {
+  color: white;
+}
