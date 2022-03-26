@@ -9,7 +9,7 @@ const Cart = (props) => {
         return (
         <div className='cart'>
             <h2>Selected Phones</h2>
-            <div>
+            <div >
             {
                 products.map(product => {
                     const {photo, modle} = product;
