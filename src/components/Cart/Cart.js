@@ -1,11 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
-import React from 'react';
 import './Cart.css'
+
 
 const Cart = (props) => {
     const products = props.cart;
-    console.log(products);
+    const chooseAgain = props.chooseAgain;
+    const chooseOneForMeHandler = props.chooseOneForMeHandler;
+
         return (
         <div className='cart'>
             <h2>Selected Phones</h2>
@@ -28,8 +30,12 @@ const Cart = (props) => {
             }
             </div>
             <div className='choose-btn'>
-                <button>Choose 1 for Me</button>
-                <button>Choose Again</button>
+                <button onClick={() =>chooseOneForMeHandler(products)}>Choose 1 for Me</button>
+                <button onClick={chooseAgain}>Choose Again</button>
+            </div>
+            <div>
+                {/* <img src={photo} alt="" />
+                <h3>{modle}</h3> */}
             </div>
 
         </div>

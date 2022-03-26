@@ -6,10 +6,37 @@ import './Shop.css'
 const Shop = () => {
     const [cart, setCart] = useState([]);
 
-    const handleAddToClick = (product) =>{
-        const newCart = [...cart, product];
-        setCart(newCart);
+    const handleAddToClick = (product) =>{ 
+        const matchId = cart.find(addedProduct => addedProduct.id === product.id );
+        if(!matchId){
+            if(!(cart.length > 3)){
+                const newCart = [...cart, product];
+                setCart(newCart); 
+            }
+            else{
+                alert('cant added more then 4 items');
+            }
+
+        }
+        else{
+            alert("already added this item")
+        }
     } 
+
+
+    const chooseAgain = () =>{
+        setCart([]);
+        }
+
+        const chooseOneForMeHandler = (products) =>{
+            console.log(products)
+            if(products.length > 0 )   {
+                const myChoise = Math.floor(Math.random()* products.length);
+                const choiseItem = products[myChoise];
+                setCart([choiseItem]); 
+                }
+        }
+        console.log(cart)
 
     const products = [
         {
@@ -90,7 +117,9 @@ const Shop = () => {
             </div>
             <div className="cart-container">
                 <Cart cart={cart}
-                 ></Cart>
+                 key={cart}
+                 chooseAgain={chooseAgain}
+                 chooseOneForMeHandler={chooseOneForMeHandler}></Cart>
             </div>
         </div>
     );
