@@ -16,7 +16,7 @@ const Product = ({product, handleAddToClick}) => {
                     <h4>Modle:{modle}</h4>
                     <h5 className='porduct-price'>Price: ${price}</h5>
                     <div className='cart-btn'>
-                        <button key={product.id} onClick={() =>handleAddToClick(product)}>Add to Cart <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon> </button>
+                        <button onClick={() =>handleAddToClick(product)}>Add to Cart <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon> </button>
                     </div>
                 </div>
             </div>

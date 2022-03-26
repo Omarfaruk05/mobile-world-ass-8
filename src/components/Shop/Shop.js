@@ -6,6 +6,7 @@ import './Shop.css'
 const Shop = () => {
     const [cart, setCart] = useState([]);
 
+    //add to cart click handler
     const handleAddToClick = (product) =>{ 
         const matchId = cart.find(addedProduct => addedProduct.id === product.id );
         if(!matchId){
@@ -23,21 +24,19 @@ const Shop = () => {
         }
     } 
 
-
+    //Choose again button handler
     const chooseAgain = () =>{
         setCart([]);
         }
-
-        const chooseOneForMeHandler = (products) =>{
-            console.log(products)
-            if(products.length > 0 )   {
-                const myChoise = Math.floor(Math.random()* products.length);
-                const choiseItem = products[myChoise];
-                setCart([choiseItem]); 
-                }
+    //choose 1 for me button handler
+    const chooseOneForMeHandler = (products) =>{
+        if(products.length > 0 )   {
+            const myChoise = Math.floor(Math.random()* products.length);
+            const choiseItem = products[myChoise];
+            setCart([choiseItem]); 
+            }
         }
-        console.log(cart)
-
+    //fake data
     const products = [
         {
             id:1,
@@ -110,14 +109,14 @@ const Shop = () => {
             <div className="products-container">
                 {
                     products.map(product => <Product
-                         key={product.id} product={product} 
+                          product={product}
+                           key={product.id} 
                          handleAddToClick={handleAddToClick}
                          ></Product>)
                 }
             </div>
             <div className="cart-container">
                 <Cart cart={cart}
-                 key={products.id}
                  chooseAgain={chooseAgain}
                  chooseOneForMeHandler={chooseOneForMeHandler}></Cart>
             </div>
