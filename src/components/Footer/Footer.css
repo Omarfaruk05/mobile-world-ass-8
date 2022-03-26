@@ -1,0 +1,13 @@
+.quesctions {
+  margin: 5%;
+}
+.ans-one {
+  display: flex;
+}
+.ans-one li {
+  margin: 3% 0;
+}
+.ans-one div {
+  border: 1px solid rgba(173, 216, 230, 0.579);
+  padding: 1%;
+}
