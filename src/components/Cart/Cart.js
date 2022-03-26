@@ -3,16 +3,16 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import './Cart.css'
 
 
-const Cart = (props) => {
-    const products = props.cart;
-    const chooseAgain = props.chooseAgain;
-    const chooseOneForMeHandler = props.chooseOneForMeHandler;
+const Cart = ({cart, chooseAgain, chooseOneForMeHandler}) => {
+    // const products = props.cart;
+    // const chooseAgain = props.chooseAgain;
+    // const chooseOneForMeHandler = props.chooseOneForMeHandler;
         return (
         <div className='cart'>
             <h2>Selected Phones</h2>
             <div >
             {
-                products.map(product => {
+                cart.map(product => {
                     const {photo, modle} = product;
                     return(
                         <div className='cart-item'>
@@ -29,7 +29,7 @@ const Cart = (props) => {
             }
             </div>
             <div className='choose-btn'>
-                <button onClick={() =>chooseOneForMeHandler(products)}>Choose 1 for Me</button>
+                <button onClick={() =>chooseOneForMeHandler(cart)}>Choose 1 for Me</button>
                 <button onClick={chooseAgain}>Choose Again</button>
             </div>
             <div>

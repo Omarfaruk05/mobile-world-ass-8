@@ -7,7 +7,7 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
 
     //add to cart click handler
-    const handleAddToClick = (product) =>{ 
+    const handleAddToCard = (product) =>{ 
         const matchId = cart.find(addedProduct => addedProduct.id === product.id );
         if(!matchId){
             if(!(cart.length > 3)){
@@ -111,7 +111,7 @@ const Shop = () => {
                     products.map(product => <Product
                           product={product}
                            key={product.id} 
-                         handleAddToClick={handleAddToClick}
+                         handleAddToCard={handleAddToCard}
                          ></Product>)
                 }
             </div>
